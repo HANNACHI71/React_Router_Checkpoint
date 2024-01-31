@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MovieList from './components/MovieList';
+import Filter from './components/Filter';
+import AddMovieForm from './components/AddMovieForm';
+import Data from './Data';
+import './App.css'
 
-function App() {
+
+const App = () => {
+  const [movies, setMovies] = useState(Data);
+  const [filter, setFilter] = useState({ title: '', rate: '' });
+
+  const handleFilterChange = (type, value) => {
+    setFilter({ ...filter, [type]: value });
+  };
+
+  const add = (newMovie) => {
+    setMovies([...movies, newMovie]);
+  };
+
+  const filteredMovies = movies.filter((movie) => {
+    const { title, rate } = filter;
+    return (
+      movie.title.toLowerCase().includes(title.toLowerCase()) && (!rate || movie.rate >= parseFloat(rate))
+    );
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <h1>Movie App</h1>
+      
+      <Filter className='filter' onFilterChange={handleFilterChange} />
+      <h2>Seulement sur Movie App</h2>
+      <p className='pacc'>Movie App offre une programmation originale unique.<br/>
+        Films, séries, programmes spéciaux et plus encore... <br/>
+        sur mesure, rien que pour vous.</p>
+      <MovieList movies={filteredMovies} />
+      <div className='addmovi'>
+      <AddMovieForm add={add}/>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

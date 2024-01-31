@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  padding: 5px;
+  color: red;
+  background-color: #020202;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.movie-list {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.movie-card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5 4px 8px rgba(99, 74, 74, 0.1);
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
+
+.movie-card img {
+  width: 50%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.filter {
+margin-bottom: 10px;
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+}
+
+.filter input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.add-movie-form input,
+.add-movie-form button {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.add-movie-form input[type="text"],
+.add-movie-form input[type="number"] {
+  width: 100%;
+  margin-right: 0;
+}
+
+
+.addmovi{
+  margin-top: 10px;
+  margin-left: 20px;
+  
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.pacc {
+  margin-left: 20px;
+  font-size: 1.5rem;
+
+}
+p{
+
+  font-size: 15px; 
+}
+
