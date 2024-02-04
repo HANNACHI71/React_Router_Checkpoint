@@ -1,5 +1,5 @@
-import React from 'react';
-import MovieCard from './MovieCard';
+import React from "react";
+import MovieCard from "../../components/MovieCard";
 
 const MovieList = ({ movies }) => {
   return (
@@ -10,5 +10,4 @@ const MovieList = ({ movies }) => {
     </div>
   );
 };
-
 export default MovieList;
